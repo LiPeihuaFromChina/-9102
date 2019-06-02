@@ -20,6 +20,10 @@ li{
 body{
 	background-color:#FFEB3B;
 	color:#fff;
+	background-image:url(http://img1.juimg.com/140908/330606-140ZP2041623.jpg);
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size: cover;
 }
 .wrap{
 	margin:0 auto;
