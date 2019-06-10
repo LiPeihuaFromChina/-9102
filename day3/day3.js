@@ -10,6 +10,8 @@ var arr = [];
 var styleName;
 var styleValues;
 var styleValue;
+var style_selected = document.getElementsByClassName("style_selected")[0];
+var value_selected = document.getElementsByClassName("value_selected")[0];
 var orig = getStyle(contents[0],'backgroundColor');
 
 function getStyle(elem,prop){
@@ -25,6 +27,7 @@ function change1(){
 	     items[i].onmouseover = function(){
 	     	styleName = this.innerHTML;
 	     	console.log(styleName);
+	     	style_selected.innerHTML = styleName;
 	     }
 	}
 }
@@ -37,7 +40,8 @@ function change2(){
 			for(var k = 0;k<styleValues.length;k++){
 		           styleValues[k].ondblclick = function(){
 		           	    styleValue = this.innerHTML;
-		           	    console.log(styleName + " " + styleValue)
+		           	    console.log(styleName + " " + styleValue);
+		           	    value_selected.innerHTML = styleValue;
 		           }
 		    }
 		}
