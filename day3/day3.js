@@ -5,6 +5,7 @@ var orig = contents[0].style.backgroundColor;
 var key = true;
 var items = document.getElementsByTagName("i");//property
 var secLists = document.getElementsByClassName("secondList");
+var restore = document.getElementsByClassName("restore")[0];
 var arr = [];
 var styleName;
 var styleValues;
@@ -23,6 +24,7 @@ function change1(){
 	for(var i = 0;i<items.length;i++){
 	     items[i].onmouseover = function(){
 	     	styleName = this.innerHTML;
+	     	console.log(styleName);
 	     }
 	}
 }
@@ -56,32 +58,12 @@ function changeStyle(elem){
 			}
 		})
 	}
+	restore.addEventListener('click',function(){
+		for(var i = 0,len = contents.length;i < len ;i++){
+			contents[i].style = "";
+		}
+	})
 }
 
 changeStyle();
-
-
-
-
-
-// [[fontFamily]]
-// function changeStyle(obj){
-//     var styleBox = [];
-// 	var chosenStyle;
-// 	var items = doument.getElementsByClassName("item");//property
-// 	var secLists = document.getElementsByClassName("secondList");
-
-// 	for(var i = 0; i<items.length;i++){
-// 		styleBox[i] = [];
-// 		for(var k = o; k<secLists.length;k++){
-// 			var lis =  secLists[k].getElementsByTagName("a");
-// 			for(var b = 0;b<lis.length;b++){
-
-// 			}
-// 			for(var j = 0; j<secLists)
-// 			styleBox[i][k] = secLists
-// 		}
-// 	}
-// 	// 双击选中
-// }
 
