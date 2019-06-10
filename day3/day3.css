@@ -23,6 +23,7 @@ ul.firstList{
 	height:30px;
 	margin-top:10px;
 	padding-top:15px;
+	position: relative;
 }
 ul.firstList>li{
 	float:left;
@@ -134,17 +135,39 @@ div.picBox3{
 
 div.restore{
 	position:absolute;
-	bottom:25%;
-	left:20px;
-	width:60px;
-	height:25px;
-	background-color:pink;
+	bottom:-30px;
+	right:0%;
+	width:50px;
+	height:20px;
+	line-height:20px;
+	padding:2px;
+	background-color:skyblue;
 	color:#fff;
-	border-radius:5px;
+	border-radius:8px;
 	line-height:25px;
 	text-align: center;
 	cursor:pointer;
+	font-size:12px;
+	z-index: 10;
+
 }
 div.restore:hover{
-	box-shadow: 2px 3px 3px #ccc;
+	box-shadow: 2px 3px 5px #99CCCC;
+}
+p.choice{
+	width:150px
+	height:15px;
+	font-size:12px;
+	line-height:15px;
+	text-align:center;
+	background-color:skyblue;
+	color:#fff;
+	font-weight:bold;
+	position:absolute;
+	bottom:-30px;
+	left:50%;
+	margin-left:-150px;
+	padding:2px;
+	border-radius:8px;
+
 }
