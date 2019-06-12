@@ -93,6 +93,7 @@ section.wrap{
 	margin:0 auto;
 	border-radius:5px solid #f40;
 	position:relative;
+	background-color:rgba(245,245,245,0.6);
 }
 section{
     width:100%;
