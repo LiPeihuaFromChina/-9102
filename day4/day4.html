@@ -10,6 +10,7 @@
 	<h1>beauty reflected by eyes</h1>
 	<div class="showArea">
 		<div class="container"></div>
+		<h4 class="placeholder">角度</h4>
 	</div>
 	<div class="imagesArea">
 		<img src="./images/01.jpg" alt="日剧跑" title="沙雕的样子，像日剧跑"/>
@@ -19,39 +20,45 @@
 		<img src="./images/05.jpg" alt="转Excel像素画" title="转Excel像素画"/>
 		<img src="./images/06.jpg" alt="红豆麻薯软欧包" title="红豆麻薯软欧包"/>
 	</div>
+	<!-- styleArea start -->
 	<div class="styleArea">
-       <div class="border">
+       <div class="border styleOption">
 	       	<span>border</span>
 	       	<select class="borderStyle">
-	       		<option>border-width</option>
-	       		<option>border-color</option>
-	       		<option>border-style</option>
+	       		<option value ="borderWidth">border-width</option>
+	       		<option value ="borderColor">border-color</option>
+	       		<option value ="borderStyle">border-style</option>
 	       	</select>
-	       	<input type="text" name="" placeholder="请输入styleValue">
-	       	<input type="submit" value="提交">
+	       	<input class = "inputValue" type="text" name="" placeholder="请输入styleValue">
+	       	<input class= "submit" type="submit" value="提交">
        </div>
        <div class="list">
 	       	<span>list</span>
-	       	<select class="listStyle">
-	       		<option>list-style</option>
-	       		<option>list-style-type</option>
-	       		<option>list-style-image</option>
+	       	<select class="listStyle styleOption">
+	       		<option value ="listStyle">list-style</option>
+	       		<option value ="listStyleType">list-style-type</option>
+	       		<option value ="listStyleImage">list-style-image</option>
 	       	</select>
-	       	<input type="text" name="" placeholder="请输入styleValue">
-	       	<input type="submit" value="提交">
+	       	<input  class = "inputValue" type="text" name="" placeholder="请输入styleValue">
+	       	<input class= "submit" type="submit" value="提交">
 	    </div>
-	    <div class="background">
+	    <div class="background styleOption">
 	       	<span>background</span>
-	       	<select class="background">
-	       		<option>list-style</option>
-	       		<option>list-style-type</option>
-	       		<option>list-style-image</option>
+	       	<select class="backgroundStyle">
+	       		<option value ="backgroundColor">background-color</option>
+	       		<option value ="backgroundImage">background-image</option>
+	       		<option value ="backgroundRepeat">background-repeat</option>
+	       		<option value ="backgroundPosition">background-position</option>
+	       		<option value ="backgroundSize">background-size</option>
 	       	</select>
-	       	<input type="text" name="" placeholder="请输入styleValue">
-	       	<input type="submit" value="提交">
+	       	<input  class = "inputValue" type="text" name="" placeholder="请输入styleValue">
+	       	<input class= "submit" type="submit" value="提交">
 	    </div>
+	    <button class="restore">清除样式</button>
  	</div>
+ 	<!-- styleArea end -->
 </div>
+<!-- wrap end -->
 <script type="text/javascript" src="day4.js"></script>
 </body>
 </html>

@@ -44,6 +44,25 @@ div.showArea .container{
 	background-size:contain;
 	background-repeat:no-repeat;
 	background-position:center;
+	transition: all 0.5s linear;
+	border-radius:10px;
+	border:2px solid #757575;
+}
+div.showArea h4{
+	font-family:'仿宋';
+	font-size:16px;
+	width:600px;
+	height:20px;
+	margin:0 auto;
+	position:absolute;
+	bottom:15px;
+	left:50%;
+	margin-left:-300px;
+	background-color:#757575;
+	color:#fff;
+	text-align:center;
+	border-radius:10px;
+	transition: all 0.5s linear;
 }
 
 div.imagesArea{
@@ -69,7 +88,21 @@ div.styleArea{
 	height:auto;
 	margin:0 auto;
 	background-color: #9E9E9E;
+	position: relative;
 }
 div.styleArea>div{
 	margin:5px;
+}
+
+div.styleArea button{
+	position:absolute;
+	right:20px;
+	bottom:10px;
+	width:60px;
+	height:30px;
+	line-height:30px;
+	font-size:12px;
+	text-align:center;
+	border-radius:6px;
+	cursor:pointer;
 }
