@@ -93,10 +93,10 @@ section.wrap{
 	margin:0 auto;
 	border-radius:5px solid #f40;
 	position:relative;
-	background-color:rgba(245,245,245,0.6);
+  background-color:rgba(245,245,245,0.6);
 }
 section{
-    width:100%;
+  width:100%;
 	height:auto;
 	border:1px solid black;
 }
@@ -189,6 +189,8 @@ div.sideBar{
 	top:0;
 	left:-70px;
 	border-radius:8px;
+	visibility: visible;
+	transition:all 0.5s ease-in;
 }
 div.sideBar ul{
 	width:100%;
@@ -218,5 +220,12 @@ div.sideBar .closeBtn{
 	left:-10px;
 	cursor:pointer;
 	background-color:red;
-	opacity:0.4;
+	opacity:0.5;
+}
+.close{
+	visibility:hidden;
+	opacity:0;
+}
+.text{
+	color:red;
 }
