@@ -89,6 +89,7 @@ div.styleArea{
 	margin:0 auto;
 	background-color: #9E9E9E;
 	position: relative;
+	padding:5px 0;
 }
 div.styleArea>div{
 	margin:5px;
@@ -105,4 +106,24 @@ div.styleArea button{
 	text-align:center;
 	border-radius:6px;
 	cursor:pointer;
+}
+input:first-of-type{
+	outline:none;
+	border:2px solid #ccc;
+	border-radius:5px;
+	padding-left:1.5em;
+}
+/*选择类型属性包含单词"submit"的所有元素*/
+input[type~=submit]{
+	background:#757575;
+	outline:none;
+	border:none;
+	cursor:pointer;
+	margin-left:5px;
+	width:40px;
+	color:#fff;
+	border-radius:4px;
+}
+input[type~=submit]:hover{
+	box-shadow: 2px 2px 2px #ccc;
 }
