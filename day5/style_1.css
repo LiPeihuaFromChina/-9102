@@ -10,6 +10,7 @@
 	border:1px solid gray;
 	font-family:'Arial';
 	color:black;
+	margin: 0 auto;
 }
 div.wrap div{
 	margin: 10px;
