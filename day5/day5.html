@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>day5</title>
-	<!-- <link rel="stylesheet" type="text/css" href="style_1.css"> -->
-	<link rel="stylesheet" type="text/css" href="style_2.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="base.css"> -->
+	<link rel="stylesheet" type="text/css" href="style_1.css">
 </head>
 <body>
+<div class="changeBtn" data-value = "style_" style = "position: fixed; bottom: 20px; left: 20px;  background: gray;  border-radius: 9px;  width: 60px;  text-align: center;">Style_1</div>
 <div class="wrap">
 	<div class="resume">
 		<h1>简历</h1>
@@ -26,13 +27,13 @@
 		<div class="contacts">
 			<h2>联系方式</h2>
 			<dl>
-				<dt>手机</dt>
+				<dt>手机:</dt>
 				    <dd>123456789</dd>
-				<dt>Email</dt>
+				<dt>Email:</dt>
 				    <dd>
 				    	<a href="mailto:1150930095@qq.com">1150930095@qq.com</a>
 				    </dd>
-				<dt>个人主页</dt>
+				<dt>个人主页:</dt>
 				     <dd>
 				    	<a href="#">Github</a>
 				    </dd>
@@ -40,27 +41,33 @@
 		</div>
 		<div class="skills">
 			<h2>能力描述</h2>
-			<p><strong>技术能力</strong></p>
-			<p>熟练掌握HTML,CSS,Javascript</p>
-			<p><strong>综合能力</strong></p>
-			<p>良好的沟通能力，主动积极，努力勤奋</p>
+			<div class="content">
+				<p><strong>技术能力</strong></p>
+				<p>熟练掌握HTML,CSS,Javascript</p>
+				<p><strong>综合能力</strong></p>
+				<p>良好的沟通能力，主动积极，努力勤奋</p>	
+			</div>
 		</div>
 		<div class="educationalBg">
 			<h2>教育经历</h2>
-			<p><strong>本科</strong></p>
-			<p>百度前端技术学院小薇学院</p>
-			<p><strong>研究生</strong></p>
-			<p>百度前端技术学院大斌学院</p>
+			<div class="content">
+				<p><strong>本科</strong></p>
+				<p>百度前端技术学院小薇学院</p>
+				<p><strong>研究生</strong></p>
+				<p>百度前端技术学院大斌学院</p>
+			</div>
 		</div>
 		<div class="projectBg">
 			<h2>项目经历</h2>
-			<p><strong>小度小度</strong></p>
-			<p>作为前端工程师角色参与了ABC组件的开发</p>
-			<p><strong>SAN Doc</strong></p>
-			<p>作为文档工程师参与了SAN Doc编写</p>
+			<div class="content">
+				<p><strong>小度小度</strong></p>
+				<p>作为前端工程师角色参与了ABC组件的开发</p>
+				<p><strong>SAN Doc</strong></p>
+				<p>作为文档工程师参与了SAN Doc编写</p>
+			</div>
 		</div>
 	</div>
 </div>
-
+<script type="text/javascript" src="day5.js"></script>
 </body>
 </html>
