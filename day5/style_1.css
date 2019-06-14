@@ -1,0 +1,49 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrap{
+	width:600px;
+	height:auto;
+	background-color:#fff;
+	text-align:left;
+	border:1px solid gray;
+	font-family:'Arial';
+	color:black;
+}
+div.wrap div{
+	margin: 10px;
+}
+div.resume{
+    font-size:18px;
+    padding-left:10px;
+    text-align:left;
+    font-weight:normal;
+/*    border:1px solid black;*/
+}
+div.details{
+/*     border: 1px solid black;*/
+}
+div.details div{
+	overflow: hidden;
+	margin-bottom: 20px;
+	/*BFC*/
+}
+div.details h2{
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 10px;
+}
+
+dt,
+dd{
+	float: left;
+	margin-right: 10px;
+}
+div.details dd{
+	padding-right: 20px;
+}
+div.details p{
+	margin: 10px 0;
+}

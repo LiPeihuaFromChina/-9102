@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+div.wrap{
+	width: 800px;
+	height: auto;
+	border: 1px solid #ccc;
+	overflow: hidden;
+	margin: 0 auto;
+}
+div.resume{
+	width: 180px;
+	height: 710px;
+	float:left;
+	background-color:#65A4FA;
+	text-align:center;	
+}
+div.resume h1{
+	width: 100%;
+	height: 50px;
+	color: #fff;
+	margin-top:100px;
+}
+div.details{
+	float: left;
+	box-sizing: border-box;
+	width: 620px;
+	height:710px;
+	padding:20px 0 0 20px;
+}
+div.details div{
+	margin-bottom: 10px;
+	overflow:hidden;
+	/*BFC*/
+/*	border:1px solid red;*/
+}
+div.details h2{
+	margin-bottom: 5px;
+	color: #323232;
+}
+
+dt,
+dd{
+	float: left;
+	margin: 0 5px;
+	color: #323235;
+}
+dd{
+	padding-right: 15px;
+}
+div.details p{
+	margin: 10px 0;
+	color: #323235;
+}
+dt,
+strong{
+	color: #323232;
+	font-weight: bold;
+}
