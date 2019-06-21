@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day6</title>
+	<style type="text/css">
+	/*flex-grow 子元素 的拉伸因子
+    设置当父元素的宽度大于所有子元素的宽度的和时（即父元素会有剩余空间），子元素如何分配父元素的剩余空间
+    flex-grow的默认值为0，意思是该元素不索取父元素的剩余空间
+    */
+        .demo{
+            border:solid 2px orange;
+            display: flex;
+        }
+        .item{
+            background-color: blueviolet;
+            border:solid 1px black;
+            color:white;
+            padding:20px;
+        }
+        .a{
+            flex-grow: 1;
+        }
+        .b{
+            flex-grow: 1;
+        }
+        .c{
+            flex-grow: 1;
+        }
+        .grow1{
+            flex-grow: 1
+        }
+        .grow2{
+            flex-grow: 2;
+        }
+        .grow3{
+            flex-grow: 3;
+        }
+	</style>
+</head>
+<body>
+<div class="demo">
+    <div class="item a">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+</div>
+
+<div class="demo">
+    <div class="item a">A</div>
+    <div class="item b">B</div>
+    <div class="item">C</div>
+</div>
+
+<div class="demo">
+    <div class="item a">A</div>
+    <div class="item b">B</div>
+    <div class="item c">C</div>
+</div>
+
+<div class="demo">
+    <div class="item a">A</div>
+    <div class="item b">B</div>
+    <div class="item c">C</div>
+</div>
+
+
+<div class="demo">
+    <div class="item grow2">A</div>
+    <div class="item grow3">B</div>
+    <div class="item grow1">C</div>
+</div>
+</body>
+</html>

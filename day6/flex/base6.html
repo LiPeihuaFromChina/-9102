@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>base6-shrink</title>
+	<style type="text/css">
+	/*flex-grow 子元素 的拉伸因子
+    flex-shrink的默认值为1，当父元素的宽度小于所有子元素的宽度的和时，子元素的宽度会减小。值越大，减小的越厉害。如果值为0，表示不减小。
+    box 为 400px
+    inner width: 200px flex-shrink: 2;
+    inner1: width: 300px flex-shrink: 3;
+
+    */
+        .demo{
+            border:solid 2px orange;
+            display: flex;
+        }
+        .item{
+            background-color: blueviolet;
+            border:solid 1px black;
+            color:white;
+            padding:20px;
+            width: 300px;
+        }
+        .a{
+            flex-shrink: 0.2;
+        }
+        .b{
+            flex-shrink: 1;
+        }
+        .c{
+            flex-shrink: 1;
+        }
+	</style>
+</head>
+<body>
+<div class="demo">
+    <div class="item a">A</div>
+    <div class="item b">B</div>
+    <div class="item c">C</div>
+</div>
+</body>
+</html>

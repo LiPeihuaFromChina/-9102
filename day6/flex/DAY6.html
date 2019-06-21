@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day6</title>
+	<style type="text/css">
+	/*justify-content 所有子元素 远着主轴分布*/
+		.demo{
+			border: 1px solid orange;
+			display: flex;
+		}
+		.item{
+			background-color: blueviolet;
+			border: 2px solid black;
+			color: white;
+			padding: 20px;
+		}
+		.demo-start{
+            justify-content: flex-start;
+		}
+		.demo-center{
+			justify-content: center
+		}
+		.demo-end{
+			justify-content: flex-end;
+		}
+		.demo-space-around{
+			justify-content: space-around;
+		}
+		.demo-space-between{
+			justify-content: space-between;
+		}
+		.demo-space-evenly{
+			justify-content: space-evenly;
+		}
+        /*justify-content 所有子元素 远着主轴分布*/
+	</style>
+</head>
+<body>
+<div class="demo demo-start">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-center">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-end">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-space-around">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-space-between">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-space-evenly">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+</div>
+</body>
+</html>
