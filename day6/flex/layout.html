@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>layout.html</title>
+	<style type="text/css">
+	/*
+	容器的属性
+	flex-direction  row(默认) | row-reverse | column | column-reverse;
+	flex-wrap       nowrap(默认) | wrap | wrap-reverse;
+	flex-flow       默认值为row nowrap flex-direction属性和flex-wrap
+	justify-content flex-start(默认) | flex-end | center | space-between两端对齐，项目之间的间隔都相等
+	                | space-around;每个项目两侧的间隔相等
+	align-items     flex-start交叉轴的起点对齐 | flex-end 终点对齐| center中点对齐 |                               baseline项目的第一行文字的基线对齐
+	            | stretch; （默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度
+	align-content
+
+	项目的属性
+	order        定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+	flex-grow    属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大
+	flex-shrink  属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+	flex-basis   
+	flex         flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。
+	align-self   align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch
+	*/  h1{
+		    text-align: center;
+	    }
+		.demo{
+			border: 2px solid orange;
+			margin: 0 auto 10px auto;
+			min-height: 200px;
+			display: flex;
+			width: 80%;
+		}
+		.item{
+			background-color: pink;
+			border: 1px solid black;
+			color: white;
+			padding: 20px;
+		}
+		.flex{
+			display: flex;
+		}
+		.flex-start{
+			justify-content: flex-start;
+		}
+		.flex-center{
+			justify-content: center;
+		}
+		.flex-end{
+			justify-content: flex-end;
+		}
+		.flex-around{
+			justify-content: space-around;
+		}
+		.flex-between{
+			justify-content: space-between;
+		}
+		.flex-evenly{
+			justify-content: space-evenly;
+		}
+
+		.flex-2-start{
+			align-items: flex-start;
+		}
+		.flex-2-center{
+			align-items: center;
+		}
+		.flex-2-end{
+			align-items: flex-end;
+		}
+		.flex-2-stretch{
+			align-items: stretch;
+		}
+
+		.flex-grow-1{
+			flex-grow: 1;
+		}
+		.flex-grow-2{
+			flex-grow: 2;
+		}
+		.flex-grow-3{
+			flex-grow: 3;
+		}
+
+		.flex-direct-row{
+			flex-direction: row;
+		}
+		.flex-direct-row-reverse{
+			flex-direction: row-reverse;
+		}
+		.flex-direct-column{
+			flex-direction: column;
+		}
+		.flex-direct-column-reverse{
+			flex-direction: column-reverse;
+		}
+	</style>
+</head>
+<body>
+	<h1>主轴方向</h1>
+	<div class="demo flex-start">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-center">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-end">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-around">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>	
+	<div class="demo flex-between">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-evenly">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+<h1>侧轴方向</h1>
+	<div class="demo flex-2-start">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-center flex-2-center">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-end flex-2-end">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-around">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+<h1>主轴方向自动增长样式</h1>	
+	<div class="demo flex-between">
+		<div class="item flex-grow-1">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-evenly">
+		<div class="item flex-grow-1">A</div>
+		<div class="item flex-grow-2">B</div>
+		<div class="item flex-grow-3">C</div>
+		<div class="item">D</div>
+	</div>
+<h1>主轴方向变化样式</h1>
+	<div class="demo flex-2-start flex-direct-row">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-center flex-2-center flex-direct-row-reverse">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-end flex-2-end flex-direct-column">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+	<div class="demo flex-around flex-direct-column-reverse">
+		<div class="item">A</div>
+		<div class="item">B</div>
+		<div class="item">C</div>
+		<div class="item">D</div>
+	</div>
+</body>
+</html>

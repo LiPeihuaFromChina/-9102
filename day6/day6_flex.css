@@ -1,0 +1,62 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	background-color: #ccc;
+	width: 400px;
+	margin: 0 auto;
+	border:1px solid black;
+}
+
+.dis-flex{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	/*1、flex-start（默认值）：左对齐
+	2、flex-end：右对齐
+	3、center： 居中
+	4、space-between：两端对齐，项目之间的间隔都相等。
+	5、space-around：每个item两侧的间隔相等。所以，item之间的间隔比item与边框的间隔大一倍。
+*/  
+    align-items: flex-start;
+    /*
+    1、flex-start：交叉轴的起点对齐。
+	2、flex-end：交叉轴的终点对齐。
+	3、center：交叉轴的中点对齐。
+*/
+
+}
+.w-100{
+	height: 100px;
+	background: red;
+}
+
+.item{
+  background-color: pink;
+  margin: 5px 10px 0px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+}
+/*项目(Item)的属性*/
+.item1, .item3, .item5 {
+	background-color: skyblue;
+	height: 90px;
+}
+
+.item2, .item4, .item6 {
+	background-color: pink;
+	height: 100px;
+}
+
+.item8{
+    order: 5;
+}
+
+.item9{
+    order: 1;
+}

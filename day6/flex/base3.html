@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>base3</title>
+	<style type="text/css">
+  /*align-self  子元素 远着侧轴分布 flex-start/center/ flext-end / stretch*/
+       .demo{
+			border: 1px solid orange;
+			display: flex;
+			height: 200px;
+			justify-content: space-around;
+		}
+		.item{
+			background-color: blueviolet;
+			border: 2px solid black;
+			color: white;
+			padding: 20px;
+		}
+		.demo-start{
+			align-items: flex-start;
+		}
+		.demo-center{
+			align-items: center;
+		}
+		.demo-end{
+			align-items: flex-end;
+		}
+		.demo-stretch{
+			align-items: stretch;
+		}
+		.demo-baseline{
+			align-items: baseline;
+		}
+		.item-start{
+			align-self: flex-start;
+		}
+		.item-center{
+			align-self: center;
+		}
+		.item-end{
+			align-self: flex-end;
+		}
+		.item-stretch{
+			align-self: stretch;
+		}
+	</style>
+</head>
+<body>
+<div class="demo">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-start">
+	<div class="item item-start">A</div>
+	<div class="item item-center">B</div>
+	<div class="item item-end">C</div>
+	<div class="item item-stretch">D</div>
+</div>
+<div class="demo demo-center">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-end">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-stretch">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+<div class="demo demo-baseline">
+	<div class="item">A</div>
+	<div class="item">B</div>
+	<div class="item">C</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>打地鼠flex布局</title>
+	<style type="text/css">
+		.box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid black;
+			margin: 0 auto;
+		}
+		.holeWrap{
+			display: flex;
+			background-color: pink;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			flex-direction: row;
+		}
+		.hole{
+			border: 2px solid black;
+			padding: 50px;
+			color: #fff;
+			background-color: orange;
+			box-sizing: border-box;
+			margin: 18px;
+			position: relative;
+		}
+		.mice{
+			width: 50px;
+			height: 50px;
+			background-color: green;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -25px;
+			margin-left: -25px;
+/*			visibility: hidden;
+			opacity: 0;*/
+			transition: background margin 0.7s linear;
+			background: url(./images/hole.png) center;
+			background-size: cover;
+
+		}
+/*		.hole:hover .mice{
+			visibility: visible;
+			opacity: 1;
+			margin-top: -50px;
+			background-image: url(./images/material.jpg);
+		}*/
+
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="holeWrap">
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>
+		<div class="hole">
+			<div class="mice"></div>
+		</div>	
+	</div>
+	<div class="content">
+		<p><label>分数：</label><span class="score">0</span></p>
+		<p><label>时间：</label><span class="time">12</span></p>
+	</div>
+<script type="text/javascript">
+	var score = document.getElementsByClassName("score")[0];
+	var time = document.getElementsByClassName("time")[0];
+	var mices = document.getElementsByClassName("mice");
+	var mice_key = true;
+	var grade = 0;
+	var currentTime = 50;
+    
+    //visibility: visible;
+	// opacity: 1;
+	// margin-top: -50px;
+	// background-image: url(./images/material.jpg);
+    // 倒数50秒 地鼠开始随机出现 每次出现两只 开始打地鼠 打一只地鼠加一分
+    // 地鼠出现500ms 就消失
+    var timer;
+    timer = setInterval(function(){
+    	var randomNum =Math.floor(Math.random()*9);
+    	if(mice_key){
+	        mices[randomNum].style.visibility = "visible";
+	    	mices[randomNum].style.opacity = "1";
+	    	mices[randomNum].style.backgroundImage = "url(./images/material.jpg)";
+	    	mices[randomNum].style.marginTop = "-50px";
+	    	mice_key = false;
+	    	setTimeout(function(){
+	    	  mice_key = true;
+              for(var i = 0; i< mices.length ; i++){
+              	mices[i].style = "";
+              }
+              currentTime--;
+              time.innerHTML = currentTime;
+              if(currentTime == 0){
+              	clearInterval(timer);
+              }
+
+	    	},1000)
+    	}
+    },1200)
+
+    function addScore(){
+    	for(var i = 0; i<mices.length;i++){
+    		mices[i].addEventListener('click',function(){
+    			var current_margin = getStyle(this,'marginTop');
+    			console.log(current_margin)
+    			if(current_margin === "-50px"){
+    				grade++;
+    				score.innerHTML = grade;
+    			}
+    		})
+    	}
+    }
+    addScore();
+
+   function getStyle(elem,prop){
+   	 if(window.getComputedStyle){
+   	 	return window.getComputedStyle(elem,null)[prop];
+   	 }else{
+   	 	return elem.currentStyle[prop]
+   	 }
+   }
+
+
+</script>
+</div>
+</body>
+</html>
