@@ -9,24 +9,34 @@
 			height: 500px;
 			border: 1px solid black;
 			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 		}
 		.holeWrap{
 			display: flex;
+			flex-shrink: 1;
 			background-color: pink;
 			flex-wrap: wrap;
 			justify-content: space-around;
 			flex-direction: row;
+			background: url(./images/grass.jpg) center;
 		}
 		.hole{
-			border: 2px solid black;
-			padding: 50px;
+			border: 2px solid green;
+			padding: 45px;
 			color: #fff;
 			background-color: orange;
+			background: url(./images/hole.png) center;
 			box-sizing: border-box;
 			margin: 18px;
 			position: relative;
+			border-radius: 35px;
+		    cursor: url("http://img4.imgtn.bdimg.com/it/u=4166988551,2186526753&fm=26&gp=0.jpg") auto;
 		}
 		.mice{
+			border-radius: 20%;
 			width: 50px;
 			height: 50px;
 			background-color: green;
@@ -37,10 +47,13 @@
 			margin-left: -25px;
 /*			visibility: hidden;
 			opacity: 0;*/
-			transition: background margin 0.7s linear;
+			transition: background 0.7s linear;
 			background: url(./images/hole.png) center;
 			background-size: cover;
 
+		}
+		.content{
+			flex-shrink: 1;
 		}
 /*		.hole:hover .mice{
 			visibility: visible;
@@ -48,6 +61,11 @@
 			margin-top: -50px;
 			background-image: url(./images/material.jpg);
 		}*/
+		audio{
+/*			width: 10px;
+			height: 10px;*/
+			background-color: #ccc;
+		}
 
 	</style>
 </head>
@@ -86,6 +104,13 @@
 		<p><label>分数：</label><span class="score">0</span></p>
 		<p><label>时间：</label><span class="time">12</span></p>
 	</div>
+	<div class="music_area">
+		<audio id="bgmusic" autoplay>
+			<source src="./music/春江花月夜.mp3" type="">
+		</audio>
+		<audio id='hit'></audio>
+	</div>
+	<audio src=""></audio>
 <script type="text/javascript">
 	var score = document.getElementsByClassName("score")[0];
 	var time = document.getElementsByClassName("time")[0];
@@ -93,6 +118,8 @@
 	var mice_key = true;
 	var grade = 0;
 	var currentTime = 50;
+	var music_area = document.getElementsByClassName('music_area')[0];
+	var bgmusic = document.getElementById('bgmusic');
     
     //visibility: visible;
 	// opacity: 1;
@@ -118,6 +145,8 @@
               time.innerHTML = currentTime;
               if(currentTime == 0){
               	clearInterval(timer);
+              	bgmusic.muted = true;
+
               }
 
 	    	},1000)
@@ -125,13 +154,23 @@
     },1200)
 
     function addScore(){
+        var music = document.createElement('AUDIO');
+		music.setAttribute('src','./music/hit.mp3');
+		music.setAttribute('class','hit');
+		music_area.appendChild(music);
     	for(var i = 0; i<mices.length;i++){
     		mices[i].addEventListener('click',function(){
     			var current_margin = getStyle(this,'marginTop');
-    			console.log(current_margin)
     			if(current_margin === "-50px"){
     				grade++;
     				score.innerHTML = grade;
+    				music.muted = false;
+                    music.autoplay = true;
+                    music.load();
+                    this.style.cursor = ""
+    			}else{
+    				music.muted = true;
+                    music.autoplay = false;
     			}
     		})
     	}
