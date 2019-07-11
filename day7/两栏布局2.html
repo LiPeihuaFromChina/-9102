@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>两栏布局2,左侧定宽，右侧自适应</title>
+	<style>
+        .box{
+        	width: 100%;
+        	border: 1px solid #ccc;
+        	background-color: pink;
+        	overflow: hidden;/*BFC*/
+        }
+        /*浮动*/
+        div.floatbox{
+/*        	height: 200px;*/
+        	width: 100%;
+        	border: 1px solid #ccc;
+        }
+		div.floatbox>div{
+			background-color: pink;
+			height: 100%;
+		}
+		.float{
+			float: left;
+		}
+		.floatbox .left{
+			width: 200px;
+		}
+		.floatbox .right{
+			width: 100%;
+			background-color: #f40;
+			margin-left: 200px;
+		}
+        /*flex布局*/
+		.flexBox{
+           display: flex;
+		}
+		.flexBox .left{
+			width: 200px;
+		}
+		.flexBox .right{
+           flex: 1;
+           background-color: #f40;
+		}
+		/*使用负margin marginBox*/
+    .marginBox .left{
+        float: left;
+        margin-left: -100%;
+        background-color: skyblue;
+        width: 200px;
+    }
+    .marginBox  .right{
+        margin-left: 200px;
+    }
+    .marginBox .container{
+        float:left;
+        width:100%
+    }
+        
+   
+	</style>
+</head>
+<body>
+	<!-- 浮动， 左侧浮动定宽  右侧自适应 width100% margin-left 200px -->
+   <div class="floatbox box">
+	   	 <div class="left float">left</div>
+	   	 <div class="right">
+	   	 	right<br>
+	   	 	right<br>
+	   	 	right<br>
+	   	 	right<br>
+	   	 	right<br>
+	   	 	right<br>
+	   	 	right<br>
+	   	 	right<br>
+	   	 	right<br>
+            right<br>
+	   	 </div>
+   </div>
+
+<br>
+   <!-- flex布局 盒子display flex 左侧定宽 右侧自适应 flex-grow : 1 -->
+   <div class="flexBox box">
+   	  <div class="left">Left</div>
+   	  <div class="right">right</div>
+   </div>
+<br>
+   <!-- 负margin布局 
+   左侧盒子float left width 100%  
+   左侧 margin-left -100% float:left; width: 200px
+   右侧自适应 margin-left 200px  -->
+   <div class="marginBox box">
+   	  <div class="container">
+   	  	 <section class="right">Right</section>
+   	  </div>
+      <aside class="left">Left</aside>
+   </div>
+
+</body>
+</html>

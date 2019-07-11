@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> 网页布局方式</title>
+	<style type="text/css">
+	    *{
+	    	text-align: center;
+	    }
+		.one .main{
+			width: 200px;
+			height: 100px;
+			background-color: grey;
+			margin: 0 auto;
+		}
+		.two .main{
+			width: 400px;
+			background-color: pink;
+			overflow: hidden;/*BFC*/
+			margin: 0 auto
+		}
+		.two .left{
+			background-color: yellow;
+			float: left;
+			width: 40%;
+		}
+		.two .right{
+			background-color: red;
+			float: left;
+			width: 40%;
+		}
+		.three .main{
+			width: 100%;
+			background: grey;
+            overflow: hidden;
+		}
+		.three .box1{
+			overflow: hidden;
+			margin: 0 auto
+			width: 600px;
+			background-color: pink;
+		}
+		.box1 .left{
+			float: left;
+			background-color: green;
+			width: 100px;
+		}
+		.box1 .middle{
+			float: left;
+			background-color: blue;
+			 width: calc(100% - 200px);
+			 /*需要注意的是，运算符前后都需要保留一个空格，例如：width: calc(100% - 10px)；*/
+		}
+		.box1 .left{
+			float: left;
+			background-color: green;
+			width: 100px;
+		}
+		.three .box2{
+			position: relative;
+			margin: 0 auto
+			width: 600px;
+			background-color: #f40;
+		}
+		.box2 .left,
+		
+	</style>
+</head>
+<body>
+<div class="one">
+	<div class="main">
+		<h2>一列布局 用于界面显著标题的展示等</h2>
+	</div>
+</div>
+
+<div class="two">
+	<div class="main">
+		<p>两列布局</p>
+		<p>最常见的就是使用float来实现。float浮动布局的缺点是浮动后会造成文本环绕等效果，以及需要及时清除浮动。</p>
+		<div class="left">设置左左浮动，或设置左右浮动（这是需要确定父级元素的宽度）　
+		何父级元素没有设置高度，则需要设置overflow:hidden来清除浮动产生的影响
+	    </div>
+		<div class="right">
+			对于自己相邻元素清除浮动产生的影响用：clear：both;
+		</div>
+	</div>
+</div>
+
+<div class="three">
+	<div class="main">
+		<h2>三列布局</h2>
+		<p>两侧定宽中间自适应
+		首先设置父级元素的宽度，可以左左右设置浮动。然后中间设置margin调整间距。 也可以都设置成左浮动，设置margin，调整间距。同样注意清除浮动的影响！
+        </p>
+        <div class="box1">
+        	<div class="left">left</div>
+        	<div class="middle">middle</div>
+        	<div class="right">right</div>
+        </div>
+        <p>或着为父级元素设置relative属性，再为子元素设置absolute属性，再分别定位，调间距</p>
+        <div class="box2">
+        	<div class="left">left</div>
+        	<div class="middle">middle</div>
+        	<div class="right">right</div>
+        </div>
+	</div>
+</div>
+
+</body>
+</html>
