@@ -74,8 +74,9 @@
        }
        .banner li a{
           position: absolute;
+          display: block;
           bottom: 0;
-          width: 100%;
+          width: 40px;
           height: 50px;
           text-align: center;
           background-color: #B2DD99;
@@ -87,6 +88,42 @@
          height: 70px;
          line-height: 70px
        }
+       .banner .pics{
+         height: 100%;
+         overflow: hidden;
+         box-sizing: border-box;
+         border: 1px solid yellow;
+         position: relative;
+       }
+       .banner .pics>div{
+         position: absolute;
+         top: 0;
+         left: 0;
+         height: 100%;
+         float: left;
+         width: 100%;
+         visibility: hidden;
+         opacity: 0;
+       }
+
+       .banner0{
+        /* background: center no-repeat;*/
+         background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562868786206&di=faecae0172896e8cd7a157392b248fd7&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F03%2F03%2Ff336ec1aea0fa2149f0f8ca382d3182f.jpg) center no-repeat;
+       }
+       .banner1{
+         background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562868786205&di=677faf8793954e113ced189331589a26&imgtype=0&src=http%3A%2F%2Fwww.uzzf.com%2Fup%2F2016-6%2F201667149508923.jpg) center no-repeat;
+       }
+       .banner2{
+         background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562868786200&di=143fe4eddc3a1e9f1504fc819ca1950c&imgtype=0&src=http%3A%2F%2Fs10.sinaimg.cn%2Fmiddle%2F557031b9hb86af99e19f9%26690) center no-repeat ;
+       }
+      .banner3{
+         background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562869676860&di=4f42ea878f7c1305dfa6e3c59f3a18d8&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20180606%2F4193c65a35014aea9284ef2ffa20d694.jpeg) center no-repeat;
+       }
+       .banner .pics .active{
+         visibility: visible;
+         opacity: 1;
+       }
+
        /*banner end*/
        nav{
          width: 100%;
@@ -161,12 +198,18 @@
    </header>
    <!-- header end -->
    <div class="banner">
+      <div class="pics wrap">
+          <div class="banner0 pic active">1</div>
+          <div class="banner1 pic">2</div>
+          <div class="banner2 pic">3</div>
+          <div class="banner3 pic">4</div>
+      </div>
       <div class="number">
             <ul>
-               <li><a href="#">1</a></li>
-               <li><a href="#">2</a></li>
-               <li><a href="#">3</a></li>
-               <li><a href="#">4</a></li>
+               <li><a href="#" data-index = "0" >1</a></li>
+               <li><a href="#" data-index = "1">2</a></li>
+               <li><a href="#" data-index = "2">3</a></li>
+               <li><a href="#" data-index = "3">4</a></li>
             </ul>
       </div>
    </div>
@@ -199,5 +242,34 @@
          @ 2019 lipeihua91.com
       </div>
    </footer>
+<script type="text/javascript">
+
+   var pics = document.getElementsByClassName('pic');
+   var len = pics.length;
+   var index = 0;
+   var number = document.getElementsByClassName("number")[0];
+   var btns = number.getElementsByTagName("a");
+
+
+   setInterval(showPic,2000);
+   function showPic(){
+      for(var i = 0; i<len; i++){
+         pics[i].className = 'pic';
+      }
+      var box;
+      for(var i = 0;i<btns.length; i++){
+         btns[i].onmouseover = function(){
+            var dataIndex = this.getAttribute('data-index');
+            index = dataIndex;
+         }
+      }
+      pics[index].className = "pic active" + " banner" + index;
+      index++;
+      if(index > 3){
+         index = 0
+      }
+   }
+
+</script>
 </body>
 </html>
