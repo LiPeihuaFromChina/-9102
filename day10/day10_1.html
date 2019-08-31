@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>day10-1</title>
+</head>
+<body>
+    <input type="number" name="" value="0" placeholder="firstNumber" id="firstNumber">
+    <input type="number" name="" value="0" placeholder="secondNumber" id="secondNumber">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result"></p>
+
+    <script type="text/javascript">
+    	// 获得第一个数字 和第二个数字
+    	// 点击相对的计算方法后结果栏显示结果
+    	var firstNum = document.getElementById("firstNumber");
+    	var secNum = document.getElementById("secondNumber");
+    	var result = document.getElementById("result");
+    	var add = document.getElementById("add-btn");
+    	var minus = document.getElementById("minus-btn");
+    	var times = document.getElementById("times-btn");
+    	var divide = document.getElementById("divide-btn");
+
+    	add.addEventListener("click", function(){
+    		let firstValue = parseInt(firstNum.value);
+    		let secValue = parseInt(secNum.value);
+    		result.innerText = (firstValue + secValue);
+    	});
+
+    	minus.addEventListener("click", function(){
+    		let firstValue = parseInt(firstNum.value);
+    		let secValue = parseInt(secNum.value);
+    		result.innerText = firstValue - secValue;
+    	});
+
+    	times.addEventListener("click", function(){
+    		let firstValue = parseInt(firstNum.value);
+    		let secValue = parseInt(secNum.value);
+    		result.innerText = firstValue * secValue;
+    	});
+
+    	divide.addEventListener("click", function(){
+    		let firstValue = parseInt(firstNum.value);
+    		let secValue = parseInt(secNum.value);
+    		result.innerText = firstValue / secValue;
+    	});
+
+    </script>
+</body>
+</html>
